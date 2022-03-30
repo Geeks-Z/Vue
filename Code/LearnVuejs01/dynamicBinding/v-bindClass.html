@@ -1,0 +1,39 @@
+<!--
+*@Author hwzhao
+*@Data 2022/3/30 15:44
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .active{
+      color: red;
+    }
+  </style>
+</head>
+<body>
+<div id="app">
+  <h2 :class="{active: isActive}">hello</h2>
+  <button @click="btnClick"></button>
+</div>
+
+<script src="../../js/vue.js"></script>
+<script>
+const app = new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello World',
+    isActive: true,
+  },
+  methods:{
+      btnClick: function (){
+          this.isActive = !this.isActive
+      }
+  }
+})
+</script>
+</body>
+</html>
