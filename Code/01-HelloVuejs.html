@@ -1,0 +1,42 @@
+<!--
+ * @Descripttion: 
+ * @version: 1.0
+ * @Author: Geeks_Z
+ * @Date: 2022-03-30 10:27:02
+ * @LastEditors: Geeks_Z
+ * @LastEditTime: 2022-04-02 15:33:50
+-->
+<!--
+*@Author hwzhao
+*@Data 2022/3/27 23:05
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <script src="js/vue.js"></script>
+    <div id="app" style="color: red; font-size: 30px;">
+        <h2>{{message}}</h2>
+        <p>{{name}}</p>
+        <a>baidu</a>
+    </div>
+    <script>
+        //let变量/const常量
+        //编程范式：声明式编程
+        const app = new Vue({
+            el: "#app",//用于挂载要管理的元素
+            data: {//定义数据
+                message: "HelloVuejs",
+                name: "zzz"
+            }
+        })
+    </script>
+</body>
+
+</html>

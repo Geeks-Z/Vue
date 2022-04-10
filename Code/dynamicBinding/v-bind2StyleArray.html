@@ -1,0 +1,28 @@
+<!--
+ * @Descripttion: 
+ * @version: 1.0
+ * @Author: Geeks_Z
+ * @Date: 2022-03-30 21:57:14
+ * @LastEditors: Geeks_Z
+ * @LastEditTime: 2022-03-30 22:19:00
+-->
+
+<body>
+
+  <div id="app">
+    <h2 :style="[baseStyle, baseStyle1]">{{message}}</h2>
+  </div>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: '你好啊',
+        baseStyle: { backgroundColor: 'red' },
+        baseStyle1: { fontSize: '100px' },
+      }
+    })
+  </script>
+
+</body>

@@ -1,0 +1,41 @@
+<!--
+ * @Descripttion: 
+ * @version: 1.0
+ * @Author: Geeks_Z
+ * @Date: 2022-03-30 21:49:23
+ * @LastEditors: Geeks_Z
+ * @LastEditTime: 2022-03-30 21:52:03
+-->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+
+<body>
+  <div id="app">
+    <h2 class="title" :class="[active, line]">{{message}}</h2>
+    <h2 class="title" :class="getClasses()">{{message}}</h2>
+  </div>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: '你好啊',
+        active: 'aaaaaa',
+        line: 'bbbbbbb'
+      },
+      methods: {
+        getClasses: function () {
+          return [this.active, this.line]
+        }
+      }
+    })
+  </script>
+
+</body>
+
+</html>
