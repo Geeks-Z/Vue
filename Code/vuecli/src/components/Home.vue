@@ -4,7 +4,7 @@
  * @Author: Geeks_Z
  * @Date: 2022-04-15 10:01:29
  * @LastEditors: Geeks_Z
- * @LastEditTime: 2022-04-15 19:51:10
+ * @LastEditTime: 2022-04-16 10:40:48
 -->
 <template>
   <div>
@@ -19,6 +19,33 @@
 <script>
 export default {
   name: "Home",
+  data() {
+    return {
+      message: "hello",
+      path: "/home/news",
+    };
+  },
+  created() {
+    console.log("created");
+    this.$router.push("/home/news");
+  },
+  destroyed() {
+    console.log("destroyed");
+  },
+  activated() {
+    console.log("调用actived");
+    this.$router.push(this.path);
+  },
+  // deactivated(){
+  //   console.log('调用actived')
+  //   console.log(this.$route.path)
+  //   this.path = this.$route.path
+  // },
+  beforeRouterLeave(to, from, next) {
+    console.log(this.$route.path);
+    this.path = this.$route.path;
+    next();
+  },
 };
 </script>
 

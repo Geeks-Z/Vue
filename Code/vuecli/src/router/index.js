@@ -4,7 +4,7 @@
  * @Author: Geeks_Z
  * @Date: 2022-04-15 09:32:16
  * @LastEditors: Geeks_Z
- * @LastEditTime: 2022-04-15 19:53:01
+ * @LastEditTime: 2022-04-16 10:43:25
  */
 // 配置路由相关的信息
 import VueRouter from 'vue-router'
@@ -33,11 +33,14 @@ const routes = [
     path: '/home',//home  前端路由地址
     name: 'Home',
     component: Home, //组件名
+    meta: {
+      title: '首页'
+    },
     children: [
-      {
-        path: '',
-        redirect: 'news'
-      },
+      // {
+      //   path: '',
+      //   redirect: 'news'
+      // },
       {
         path: 'news',
         component: HomeNews
@@ -51,16 +54,24 @@ const routes = [
   {
     path: '/about',//about 前端路由地址
     name: 'About',
-    component: About
+    component: About,meta: {
+      title: '关于'
+    },
   },
   {
     path: '/user/:userId',//about 前端路由地址
     name: 'User',
-    component: User
+    component: User,
+    meta: {
+      title: '用户'
+    },
   },
   {
     path: '/profile',
-    component: Profile
+    component: Profile,
+    meta: {
+      title: '档案'
+    },
 
   },
 ]
@@ -70,6 +81,17 @@ const router = new VueRouter({
   routes,
   mode: 'history'
 })
+
+/**
+ * 前置钩子：从from跳转到to
+ * from 来的路由
+ * to 要去的路由
+ */
+ router.beforeEach((to, from, next) => {
+  document.title = to.matched[0].meta.title //给目标路由的页面的title赋值
+  next()//必须调用，不调用不会跳转
+})
+
 
 // 3.将router对象传入到Vue实例
 export default router

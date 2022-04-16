@@ -4,7 +4,7 @@
  * @Author: Geeks_Z
  * @Date: 2022-04-14 19:52:27
  * @LastEditors: Geeks_Z
- * @LastEditTime: 2022-04-15 20:23:37
+ * @LastEditTime: 2022-04-16 10:37:19
 -->
 <template>
   <div id="app">
@@ -13,7 +13,9 @@
     <!--<router-link :to="'/user/'+userId">用户</router-link>-->
     <button @click="userClick">用户</button>
     <button @click="profileClick">档案</button>
-    <router-view></router-view>
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
   </div>
 </template>
 
