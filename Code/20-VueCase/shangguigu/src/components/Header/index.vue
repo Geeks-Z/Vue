@@ -4,7 +4,7 @@
  * @Author: Geeks_Z
  * @Date: 2022-05-01 10:49:20
  * @LastEditors: Geeks_Z
- * @LastEditTime: 2022-05-05 09:18:25
+ * @LastEditTime: 2022-05-05 21:40:20
 -->
 /*
  * @Descripttion: 
@@ -55,6 +55,7 @@
               type="text"
               id="autocomplete"
               class="input-error input-xxlarge"
+              v-model="keyword"
             />
             <button
               class="sui-btn btn-xlarge btn-danger"
@@ -73,12 +74,15 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      keyword: "",
+    };
   },
   activated() {},
   methods: {
     goSearch() {
-      this.$router.push("/search");
+      // 路由传递参数
+      this.$router.push("/search/" + this.keyword);
     },
   },
 };
