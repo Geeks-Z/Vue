@@ -4,7 +4,7 @@
  * @Author: Geeks_Z
  * @Date: 2022-05-03 21:31:05
  * @LastEditors: Geeks_Z
- * @LastEditTime: 2022-05-05 09:11:15
+ * @LastEditTime: 2022-05-06 09:09:26
  */
 //配置路由的地方
 import Vue from "vue";
@@ -28,6 +28,7 @@ const routes = [
     path: '/search/:keyword',
     component: Search,
     meta: { show: true },
+    name: "search"
   },
   {
     path: '/login',

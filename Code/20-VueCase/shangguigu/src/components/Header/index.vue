@@ -4,7 +4,7 @@
  * @Author: Geeks_Z
  * @Date: 2022-05-01 10:49:20
  * @LastEditors: Geeks_Z
- * @LastEditTime: 2022-05-05 21:40:20
+ * @LastEditTime: 2022-05-06 09:10:30
 -->
 /*
  * @Descripttion: 
@@ -82,7 +82,16 @@ export default {
   methods: {
     goSearch() {
       // 路由传递参数
-      this.$router.push("/search/" + this.keyword);
+      // 字符串形式
+      // this.$router.push("/search/" + this.keyword + "?k=" + this.keyword);
+      // 模板字符串(错误)
+      // this.$router.push("/search/${this.keyword}?k=${this.keyword}");
+      // 对象
+      this.$router.push({
+        name: "search",
+        params: { keyword: this.keyword },
+        query: { k: this.keyword },
+      });
     },
   },
 };
