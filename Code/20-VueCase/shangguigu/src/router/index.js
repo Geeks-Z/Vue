@@ -4,7 +4,7 @@
  * @Author: Geeks_Z
  * @Date: 2022-05-03 21:31:05
  * @LastEditors: Geeks_Z
- * @LastEditTime: 2022-05-06 09:09:26
+ * @LastEditTime: 2022-05-10 19:18:03
  */
 //配置路由的地方
 import Vue from "vue";
@@ -50,7 +50,7 @@ const routes = [
 
 
 const router = new VueRouter({
-  mode: "history",
+  mode: "history", // 没有#的模式
   routes,
 })
 

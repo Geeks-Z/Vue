@@ -4,7 +4,7 @@
  * @Author: Geeks_Z
  * @Date: 2022-05-01 10:49:20
  * @LastEditors: Geeks_Z
- * @LastEditTime: 2022-05-06 09:10:30
+ * @LastEditTime: 2022-05-10 09:28:13
 -->
 /*
  * @Descripttion: 
@@ -87,11 +87,14 @@ export default {
       // 模板字符串(错误)
       // this.$router.push("/search/${this.keyword}?k=${this.keyword}");
       // 对象
-      this.$router.push({
-        name: "search",
-        params: { keyword: this.keyword },
-        query: { k: this.keyword },
-      });
+      if (this.$route.query) {
+        let location = {
+          name: "search",
+          params: { keyword: this.keyword || undefined },
+        };
+        location.query = this.$route.query;
+        this.$router.push(location);
+      }
     },
   },
 };

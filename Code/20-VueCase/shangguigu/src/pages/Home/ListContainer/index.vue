@@ -4,7 +4,7 @@
  * @Author: Geeks_Z
  * @Date: 2022-05-06 21:18:12
  * @LastEditors: Geeks_Z
- * @LastEditTime: 2022-05-06 22:05:41
+ * @LastEditTime: 2022-05-10 21:23:04
 -->
 <template>
   <!--列表-->
@@ -109,11 +109,22 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
+// import Swiper from 'swiper'
 export default {
   data() {
     return {};
   },
   activated() {},
+  mounted() {
+    // 派发action：通过vuex发起ajax请求，将数据仓库存储在仓库中(此时调用store中的action获取数据)
+    this.$store.dispatch("getBannerList");
+  },
+  computed: {
+    ...mapState({
+      bannerList: (state) => state.home.bannerList,
+    }),
+  },
 };
 </script>
 

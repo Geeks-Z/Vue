@@ -4,7 +4,7 @@
  * @Author: Geeks_Z
  * @Date: 2022-05-03 21:29:59
  * @LastEditors: Geeks_Z
- * @LastEditTime: 2022-05-07 15:44:31
+ * @LastEditTime: 2022-05-10 20:02:40
 -->
 <template>
   <div>
@@ -31,7 +31,6 @@ export default {
   data() {
     return {};
   },
-  activated() {},
   components: {
     ListContainer,
     Recommend,
@@ -40,6 +39,12 @@ export default {
     Floor,
     Brand,
   },
+  mounted() {
+    // 触发vuex的异步action调用, 从mock接口请求数据到state中
+    // this.$store.dispatch("getBanners");
+    // this.$store.dispatch("getFloors");
+  },
+  activated() {},
 };
 </script>
 

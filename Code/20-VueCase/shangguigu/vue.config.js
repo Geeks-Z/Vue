@@ -15,6 +15,12 @@ module.exports = {
       "/api": {
         target: "http://gmall-h5-api.atguigu.cn",
       }
-    }
-  }
+    },
+    overlay: {
+      warnings: false,
+      errors: false
+  },
+  },
+  lintOnSave: false
+
 }
