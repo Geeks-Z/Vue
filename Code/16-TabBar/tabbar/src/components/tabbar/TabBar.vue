@@ -1,0 +1,34 @@
+<!--
+ * @Descripttion: 
+ * @version: 1.0
+ * @Author: Geeks_Z
+ * @Date: 2022-04-16 13:10:52
+ * @LastEditors: Geeks_Z
+ * @LastEditTime: 2022-04-16 14:42:32
+-->
+<template>
+  <div id="tab-bar">
+    <slot></slot>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "TabBar",
+};
+</script>
+
+<style scoped>
+#tab-bar {
+  display: flex;
+  background-color: #f6f6f6;
+
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  box-shadow: 0 -1px 1px rgba(100, 100, 100, 0.2);
+}
+</style>
+
